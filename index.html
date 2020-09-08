@@ -473,7 +473,7 @@
 
 					<!-- Google Map
 					============================================= -->
-					<div id="google-map" class="gmap"></div>
+					<div id="map" class="gmap"></div>
 
 				</section><!-- Contact & Map Section End -->
 				
@@ -492,7 +492,7 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						Copyrights &copy; 2017 || Sébastien Pereda<br>
+						Copyright &copy; 2017-2020 || Sébastien Pereda<br>
 						<div class="copyright-links"><a href="mentions.html" target="_blank">Mentions légales</a></div>
 					</div>
 
@@ -525,37 +525,18 @@
 	============================================= -->
 	<script type="text/javascript" src="js/app.js"></script>
 	
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4fiAPd5RlZw9jWhlKLU49hNyIbXiFb4ocallback=initMap"
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4fiAPd5RlZw9jWhlKLU49hNyIbXiFb4o&callback=initMap"
   type="text/javascript"></script>
-	<script type="text/javascript" src="../js/jquery.gmap.js"></script>
-	
-	<script type="text/javascript">
 
-		$('#google-map').gMap({
-			address: '3 rue Léon des Landes, Mont-de-Marsan, France',
-			maptype: 'ROADMAP',
-			zoom: 17,
-			markers: [
-				{
-					address: "3 rue Léon des Landes, Mont-de-Marsan, France",
-					html: '<div style="width: 300px;"><h4 style="margin-bottom: 8px;">Laverie Saint-Roch</h4><p class="nobottommargin">Nous prenons soin de votre linge !</p></div>',
-					icon: {
-						image: "img/map-icon-red.png",
-						iconsize: [32, 39],
-						iconanchor: [32,39]
-					}
-				}
-			],
-			doubleclickzoom: false,
-			controls: {
-				panControl: true,
-				zoomControl: true,
-				mapTypeControl: true,
-				scaleControl: false,
-				streetViewControl: false,
-				overviewMapControl: false
-			}
-		});
+	<script type="text/javascript">
+		let map;
+
+		function initMap() {
+			map = new google.maps.Map(document.getElementById("map"), {
+				center: { lat: 43.8884675, lng: -0.5016918 },
+				zoom: 8
+			});
+		}
 
 	</script>
 
